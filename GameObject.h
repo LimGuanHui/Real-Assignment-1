@@ -9,11 +9,11 @@ class GameObject
 public:
     GameObject();
     ~GameObject();
-    int getCount();
+    static int getCount();//initialize to 0 in cpp
     string getName(void);
 
 private:
-    int count;
+    static int count;
     const string kName;
 protected:
     GameObject(const string&);

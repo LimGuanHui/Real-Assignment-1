@@ -11,7 +11,7 @@ public:
     Weapon(const string&, const int&, const int&);
     const int getAttackDmg();
 private:
-    const int kAttackDmg;
+    const int kAttackDmg = 0; // initialized to 0
 protected:
 };
 
