@@ -30,6 +30,9 @@
     <ClCompile Include="Outfit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Dweller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vec2D.h">

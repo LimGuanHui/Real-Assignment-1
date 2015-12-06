@@ -9,8 +9,8 @@ class Dweller : public Outfit, public Weapon
 {
 public:
     Dweller();
-    ~Dweller();
     Dweller(const string&, const int&);
+    ~Dweller();
     const int getSPECIAL();
     const int getCurrentHealth();
     const int getCurrentRadDamage();
