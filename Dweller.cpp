@@ -80,3 +80,18 @@ void Dweller::useRadAway()
 
 }
 
+Dweller::Outfit* assignWeapon(Outfit*)
+{
+
+}
+
+Dweller::Weapon* assignWeapon(Weapon*)
+{
+
+}
+
+bool Dweller::isDead()
+{
+
+}
+
