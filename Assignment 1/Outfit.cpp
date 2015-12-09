@@ -1,11 +1,11 @@
 #include "Outfit.h"
 
-Outfit::Outfit()
+Outfit::Outfit() : kSPECIAL(kSPECIAL)
 {
 
 }
 
-Outfit::Outfit(const string&, const int&, const int&)
+Outfit::Outfit(const string&, const int&, const int&) : kSPECIAL(kSPECIAL)
 {
 
 }

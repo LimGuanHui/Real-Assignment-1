@@ -11,7 +11,7 @@ public:
     Outfit(const string&, const int&, const int&);
     const int getSPECIAL();
 private:
-    const int kSPECIAL = 0;
+    const int kSPECIAL;
 protected:
 };
 
