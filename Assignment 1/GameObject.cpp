@@ -1,28 +1,27 @@
 #include "GameObject.h"
 
-static int Count = 0;
-
 GameObject::GameObject()
 {
-
+    ++count;
 }
 
-GameObject::GameObject(const string&)
+GameObject::GameObject(const string& kName)
 {
-
+    
 }
 
 GameObject::~GameObject()
 {
-
+    --count;
 }
 
 int GameObject::getCount()
 {
+
     return 0;
 }
 
 string GameObject::getName(void)
 {
-    return 0;
+    return kName;
 }

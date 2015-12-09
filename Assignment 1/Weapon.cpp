@@ -11,6 +11,8 @@ Weapon::Weapon(const string& kName, const int& durability_, const int& kAttackDm
     {
         
     }
+    
+
 }
 
 Weapon::~Weapon()

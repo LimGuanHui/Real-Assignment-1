@@ -5,7 +5,7 @@ Outfit::Outfit() : kSPECIAL(kSPECIAL)
 
 }
 
-Outfit::Outfit(const string&, const int&, const int&) : kSPECIAL(kSPECIAL)
+Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL) : kSPECIAL(kSPECIAL)
 {
 
 }
