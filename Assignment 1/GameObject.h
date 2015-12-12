@@ -16,7 +16,7 @@ public:
     string getName(void);
 
 private:
-    static int count;
+    static int count_;
     const string kName;
 protected:
     GameObject(const string&);

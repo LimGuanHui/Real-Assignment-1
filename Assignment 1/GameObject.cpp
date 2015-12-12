@@ -2,7 +2,7 @@
 
 GameObject::GameObject()
 {
-    ++count;
+    ++count_;
 }
 
 GameObject::GameObject(const string& kName)
@@ -12,13 +12,13 @@ GameObject::GameObject(const string& kName)
 
 GameObject::~GameObject()
 {
-    --count;
+    --count_;
 }
 
 int GameObject::getCount()
 {
 
-    return 0;
+    return count_;
 }
 
 string GameObject::getName(void)
