@@ -8,7 +8,6 @@ Item::Item()
 Item::Item(const string& kName, const int& durability_)
 {
     
-    
 }
 
 Item::~Item()
@@ -16,9 +15,9 @@ Item::~Item()
     
 }
 
-void Item::receiveDamage(const int &)
+void Item::receiveDamage(const int & durability_ )
 {
-
+    this->durability_ = durability_;
 }
 
 const int Item::getDurability()

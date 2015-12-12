@@ -5,7 +5,7 @@
 #include "Weapon.h"
 #include "Vec2D.h"
 
-class Dweller : public Outfit, public Weapon
+class Dweller : public GameObject 
 {
 public:
     Dweller();

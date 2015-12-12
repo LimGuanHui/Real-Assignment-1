@@ -17,7 +17,6 @@ GameObject::~GameObject()
 
 int GameObject::getCount()
 {
-
     return count_;
 }
 

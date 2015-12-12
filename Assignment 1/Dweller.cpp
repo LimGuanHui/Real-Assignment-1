@@ -19,6 +19,7 @@ const int Dweller::getSPECIAL()
 {
 
     int Strength = 0;
+    Strength = (SPECIAL_ / 1000000);
     if (Strength > 9)
     {
         Strength = 9;
@@ -30,6 +31,7 @@ const int Dweller::getSPECIAL()
 
 
     int Perception = 0;
+    Perception = (SPECIAL_ / 100000) - (Strength * 10);
     if (Perception > 9)
     {
         Perception = 9;
@@ -41,6 +43,7 @@ const int Dweller::getSPECIAL()
 
 
     int Endurance = 0;
+    Endurance = (SPECIAL_ / 10000) - (Strength * 100) - (Perception * 10);
     if (Endurance > 9)
     {
         Endurance = 9;
@@ -52,6 +55,7 @@ const int Dweller::getSPECIAL()
 
 
     int Charisma = 0;
+    Charisma = (SPECIAL_ / 1000) - (Strength * 1000) - (Perception * 100) - (Endurance * 10);
     if (Charisma > 9)
     {
         Charisma = 9;
@@ -63,6 +67,7 @@ const int Dweller::getSPECIAL()
 
 
     int Intelligence = 0;
+    Intelligence = (SPECIAL_ / 100) - (Strength * 10000) - (Perception * 1000) - (Endurance * 100) - (Charisma * 10);
     if (Intelligence > 9)
     {
         Intelligence = 9;
@@ -74,6 +79,7 @@ const int Dweller::getSPECIAL()
 
 
     int Agility = 0;
+    Agility = (SPECIAL_ / 10) - (Strength * 100000) - (Perception * 10000) - (Endurance * 1000) - (Charisma * 100) - (Intelligence * 10);
     if (Agility > 9)
     {
         Agility = 9;
@@ -85,6 +91,7 @@ const int Dweller::getSPECIAL()
 
 
     int Luck = 0;
+    Luck = (SPECIAL_ / 1) - (Strength * 1000000) - (Perception * 100000) - (Endurance * 10000) - (Charisma * 1000) - (Intelligence * 100) - (Agility * 10);
     if (Luck > 9)
     {
         Luck = 9;
@@ -117,9 +124,9 @@ void Dweller::setPosition(const Vec2D& position_)
     this->position_ = position_;
 }
 
-const Vec2D getPosition() 
+const Vec2D Dweller::getPosition() 
 {
-    
+    return position_;
 }
 
 void Dweller::receiveHealthDamage(const int& health_)
@@ -148,7 +155,7 @@ void Dweller::receiveRadDamage(const int& radiation_)
 
 void Dweller::receiveEquipmentDamage(const int& durability_)
 {
-    this->durability_ = durability_;
+    this->receiveDamage = durability_;
 }
 
 void Dweller::addStimpak(const int& stimpak_)
@@ -197,4 +204,3 @@ bool Dweller::isDead()
     }
     return isDead;
 }
-
