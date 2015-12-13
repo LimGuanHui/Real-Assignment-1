@@ -5,11 +5,12 @@
 class Weapon : public Item
 {
 public:
-    Weapon();
+    //Weapon();
     ~Weapon();
 
     Weapon(const string&, const int&, const int&);
     const int getAttackDmg();
+    virtual void receiveDamage(const int&);
 private:
     const int kAttackDmg;
 protected:

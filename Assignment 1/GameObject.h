@@ -10,9 +10,9 @@ using std::string;
 class GameObject
 {
 public:
-    GameObject();
+    //GameObject();
     ~GameObject();
-    static int getCount();//initialize to 0 in cpp
+    static int getCount();
     string getName(void);
 
 private:

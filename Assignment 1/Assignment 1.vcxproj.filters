@@ -36,6 +36,9 @@
     <ClCompile Include="Vec2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="compileCheck.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vec2D.h">

@@ -11,31 +11,31 @@ using std::endl;
 
 void assignment1();
 
-//void testNames();
-//void shouldNotCompile();
-//
-//int main()
+void testNames();
+void shouldNotCompile();
+
+int main()
+{
+    testNames();
+    shouldNotCompile();
+
+    Dweller d("One", 5555555);
+    Outfit o("Outfit", 0, 1234567);
+    cout << d.getSPECIAL() << endl;
+    d.assignOutfit(&o);
+    cout << d.getSPECIAL() << endl;
+
+    return 0;
+}
+
+
+
+//void main()
 //{
-//    testNames();
-//    shouldNotCompile();
-//
-//    Dweller d("One", 5555555);
-//    Outfit o("Outfit", 0, 1234567);
-//    cout << d.getSPECIAL() << endl;
-//    d.assignOutfit(&o);
-//    cout << d.getSPECIAL() << endl;
-//
-//    return 0;
+//    assignment1();
 //}
-
-
-
-void main()
-{
-    assignment1();
-}
-
-void assignment1()
-{
-    
-}
+//
+//void assignment1()
+//{
+//    Dweller d("One", 5555555);
+//}

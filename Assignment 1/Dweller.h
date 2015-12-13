@@ -8,7 +8,7 @@
 class Dweller : public GameObject 
 {
 public:
-    Dweller();
+    
     Dweller(const string&, const int&);
     ~Dweller();
     const int getSPECIAL();

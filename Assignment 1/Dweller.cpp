@@ -1,13 +1,11 @@
 #include "Dweller.h"
 
-Dweller::Dweller()
+
+Dweller::Dweller(const string& kName, const int& SPECIAL_ ) 
+: position_(0,0), SPECIAL_(SPECIAL_), health_(100), radiation_(0), 
+stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL), GameObject(kName)
 {
-
-}
-
-Dweller::Dweller(const string& kName, const int& kSPECIAL) : health_(100), stimpak_(0), radaway_(0)
-{
-
+    cout << "Dweller " << kName << " is created " << "SPECIAL_ = " << SPECIAL_ << endl;
 }
 
 Dweller::~Dweller()
@@ -17,131 +15,128 @@ Dweller::~Dweller()
 
 const int Dweller::getSPECIAL()
 {
+    //rmb to change this
+    if (outfit_ != 0) // checking for outfit
+    {
+        outfit_->getSPECIAL();
+        //Dweller SPECIAL
+        int Dwellerstrength;
+        Dwellerstrength = (SPECIAL_ / 1000000);
+        int Dwellerperception;
+        Dwellerperception = (SPECIAL_ / 100000) - (Dwellerstrength * 10);
+        int Dwellerendurance;
+        Dwellerendurance = (SPECIAL_ / 10000) - (Dwellerstrength * 100) - (Dwellerperception * 10);
+        int Dwellercharisma;
+        Dwellercharisma = (SPECIAL_ / 1000) - (Dwellerstrength * 1000) - (Dwellerperception * 100) - (Dwellerendurance * 10);
+        int Dwellerintelligence;
+        Dwellerintelligence = (SPECIAL_ / 100) - (Dwellerstrength * 10000) - (Dwellerperception * 1000) - (Dwellerendurance * 100) - (Dwellercharisma * 10);
+        int Dwelleragility;
+        Dwelleragility = (SPECIAL_)-(Dwellerstrength * 100000) - (Dwellerperception * 10000) - (Dwellerendurance * 1000) - (Dwellercharisma * 100) - (Dwellerintelligence * 10);
+        int Dwellerluck;
+        Dwellerluck = (SPECIAL_)-(Dwellerstrength * 100000) - (Dwellerperception * 100000) - (Dwellerendurance * 10000) - (Dwellercharisma * 1000) - (Dwellerintelligence * 100) - (Dwelleragility * 10); \
+            
+            
+        //Outfit
+        int Outfitstrength = (outfit_->getSPECIAL() / 1000000);
+        int Outfitperception = (outfit_->getSPECIAL() / 100000) - (Outfitstrength * 10);
+        int Outfitendurance = (outfit_->getSPECIAL() / 10000) - (Outfitstrength * 100) - (Outfitperception * 10);
+        int Outfitcharisma = (outfit_->getSPECIAL() / 1000) - (Outfitstrength * 1000) - (Outfitperception * 100) - (Outfitendurance * 10);
+        int Outfitintelligence = (outfit_->getSPECIAL() / 100) - (Outfitstrength * 10000) - (Outfitperception * 1000) - (Outfitendurance * 100) - (Outfitcharisma * 10);
+        int Outfitagility = (outfit_->getSPECIAL()) - (Outfitstrength * 100000) - (Outfitperception * 10000) - (Outfitendurance * 1000) - (Outfitcharisma * 100) - (Outfitintelligence * 10);
+        int Outfitluck = (outfit_->getSPECIAL()) - (Outfitstrength * 100000) - (Outfitperception * 100000) - (Outfitendurance * 10000) - (Outfitcharisma * 1000) - (Outfitintelligence * 100) - (Outfitagility * 10);
+        //combine the special
+        int strength, perception, endurance, charisma, intelligence, agility, luck;
+        strength = Outfitstrength + Dwellerstrength;
+        perception = Dwellerperception + Outfitperception;
+        endurance = Dwellerendurance + Outfitendurance;
+        charisma = Dwellercharisma + Outfitcharisma;
+        intelligence = Dwellerintelligence + Outfitintelligence;
+        agility = Dwelleragility + Outfitagility;
+        luck = Dwellerluck + Outfitluck;
+        //bounds check
+        if (strength >= 9)
+        {
+            strength = 9;
+        }
+        if (perception >= 9)
+        {
+            perception = 9;
+        }
+        if (endurance >= 9)
+        {
+            endurance = 9;
+        }
+        if (charisma >= 9)
+        {
+            charisma = 9;
+        }
+        if (intelligence >= 9)
+        {
+            intelligence = 9;
+        }
+        if (agility >= 9)
+        {
+            agility = 9;
+        }
+        if (luck >= 9)
+        {
+            luck = 9;
+        }
+        //update SPECIAL_
+        SPECIAL_ = (strength * 1000000) + (perception * 100000) + (endurance * 10000) + (charisma * 1000) + (intelligence * 100) + (agility * 10) + (luck * 1);
+        return SPECIAL_;
+    }
+    if (outfit_ == 0) // in case there is no outfit
+    {
+        return SPECIAL_;
 
-    int Strength = 0;
-    Strength = (SPECIAL_ / 1000000);
-    if (Strength > 9)
-    {
-        Strength = 9;
     }
-    if (Strength < 0)
-    {
-        Strength = 0;
-    }
-
-
-    int Perception = 0;
-    Perception = (SPECIAL_ / 100000) - (Strength * 10);
-    if (Perception > 9)
-    {
-        Perception = 9;
-    }
-    if (Perception < 0)
-    {
-        Perception = 0;
-    }
-
-
-    int Endurance = 0;
-    Endurance = (SPECIAL_ / 10000) - (Strength * 100) - (Perception * 10);
-    if (Endurance > 9)
-    {
-        Endurance = 9;
-    }
-    if (Endurance < 0)
-    {
-        Endurance = 0;
-    }
-
-
-    int Charisma = 0;
-    Charisma = (SPECIAL_ / 1000) - (Strength * 1000) - (Perception * 100) - (Endurance * 10);
-    if (Charisma > 9)
-    {
-        Charisma = 9;
-    }
-    if (Charisma < 0)
-    {
-        Charisma = 0;
-    }
-
-
-    int Intelligence = 0;
-    Intelligence = (SPECIAL_ / 100) - (Strength * 10000) - (Perception * 1000) - (Endurance * 100) - (Charisma * 10);
-    if (Intelligence > 9)
-    {
-        Intelligence = 9;
-    }
-    if (Intelligence < 0)
-    {
-        Intelligence = 0;
-    }
-
-
-    int Agility = 0;
-    Agility = (SPECIAL_ / 10) - (Strength * 100000) - (Perception * 10000) - (Endurance * 1000) - (Charisma * 100) - (Intelligence * 10);
-    if (Agility > 9)
-    {
-        Agility = 9;
-    }
-    if (Agility < 0)
-    {
-        Agility = 0;
-    }
-
-
-    int Luck = 0;
-    Luck = (SPECIAL_ / 1) - (Strength * 1000000) - (Perception * 100000) - (Endurance * 10000) - (Charisma * 1000) - (Intelligence * 100) - (Agility * 10);
-    if (Luck > 9)
-    {
-        Luck = 9;
-    }
-    if (Luck < 0)
-    {
-        Luck = 0;
-    }
-    return SPECIAL_;
 }
 
 const int Dweller::getCurrentHealth()
 {
+    cout << "health_ get success -> " << health_ << endl;
     return health_;
+    
 }
 
 const int Dweller::getCurrentRadDamage()
 {
+    cout << "radiation_ get success -> " << radiation_ << endl;
+    return radiation_;
 
 }
 
 const int Dweller::getAttackDmg()
 {
+
     return 0;
 }
 
 void Dweller::setPosition(const Vec2D& position_)
 {
-    this->position_ = Vec2D(0, 0);
     this->position_ = position_;
+    cout << "position_ set success "  << endl;
 }
 
 const Vec2D Dweller::getPosition() 
 {
+    cout << "position_ get success " << endl;
     return position_;
 }
 
 void Dweller::receiveHealthDamage(const int& health_)
 {
-    this->health_ = 100;
     if (health_ > (100-radiation_))
     {
         this->health_ = (100 - radiation_);
     }
     this->health_ = health_;
+    cout << "health damage receive success ->" << health_ << endl;
 }
 
 void Dweller::receiveRadDamage(const int& radiation_)
 {
-    this->radiation_ = 0;
     if (radiation_ > 100)
     {
         this-> radiation_ = 100;
@@ -151,29 +146,33 @@ void Dweller::receiveRadDamage(const int& radiation_)
         this->radiation_ = 0;
     }
     this->radiation_ = radiation_;
+    cout << "radiation damage receive success ->" << radiation_ << endl;
 }
 
 void Dweller::receiveEquipmentDamage(const int& durability_)
 {
-    this->receiveDamage = durability_;
+    cout << "equipment damage receive success ->" << durability_ << endl;
 }
 
 void Dweller::addStimpak(const int& stimpak_)
 {
     this->stimpak_ = 0;
     this->stimpak_ = stimpak_;
+    cout << "add stimpak success ->" << stimpak_ << endl;
 }
 
 void Dweller::addRadAway(const int& radaway_)
 {
     this->radaway_ = 0;
     this->radaway_ = radaway_;
+    cout << "add radaway success ->" << radaway_ << endl;
 }
 
 void Dweller::useStimpak()
 {
     this->stimpak_ -= 1;
     this->health_ += 20;
+    cout << "use stimpak success ->" << stimpak_ << " health is " << health_ << endl;
 }
 
 void Dweller::useRadAway()
@@ -182,25 +181,26 @@ void Dweller::useRadAway()
     this->radiation_ -= 10;
 }
 
-Dweller::Outfit* assignOutfit(Outfit*outfit_)
+Outfit* Dweller::assignOutfit(Outfit*outfit_)
 {
     return 0;
 }
 
-Dweller::Weapon* assignWeapon(Weapon*weapon_)
+Weapon* Dweller:: assignWeapon(Weapon*weapon_)
 {
     return 0;
 }
 
 bool Dweller::isDead()
 {
+    bool isDead;
     if (health_ >= 1)
     {
-        this->isDead = false;
+        isDead = false;
     }
     if (health_ < 1)
     {
-        this->isDead = true;
+        isDead = true;
     }
     return isDead;
 }

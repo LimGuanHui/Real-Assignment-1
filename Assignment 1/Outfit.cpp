@@ -1,13 +1,11 @@
 #include "Outfit.h"
 
-Outfit::Outfit() : kSPECIAL(kSPECIAL)
+
+Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL) 
+: kSPECIAL(kSPECIAL), Item(kName, durability_)
 {
-
-}
-
-Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL) : kSPECIAL(kSPECIAL)
-{
-
+    cout << "outfit " << kName << " is created " << "kSPECIAL = " << kSPECIAL
+        << " durability_ = " << durability_ << endl;
 }
 
 Outfit::~Outfit()
@@ -93,4 +91,9 @@ const int Outfit::getSPECIAL()
         Luck = 0;
     }
     return kSPECIAL;
+}
+
+void Outfit::receiveDamage(const int& durability_)
+{
+    this->durability_ = durability_;
 }
