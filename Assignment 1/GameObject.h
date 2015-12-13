@@ -11,7 +11,7 @@ class GameObject
 {
 public:
     //GameObject();
-    ~GameObject();
+    virtual ~GameObject();
     static int getCount();
     string getName(void);
 

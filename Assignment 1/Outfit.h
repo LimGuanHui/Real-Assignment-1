@@ -7,7 +7,7 @@ class Outfit : public Item
 {
 public:
     //Outfit();
-    ~Outfit();
+    virtual ~Outfit();
     Outfit(const string&, const int&, const int&);
     const int getSPECIAL();
     virtual void receiveDamage(const int&);

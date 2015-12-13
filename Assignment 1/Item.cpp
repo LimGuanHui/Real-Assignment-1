@@ -5,7 +5,7 @@
 Item::Item(const string& kName, const int& durability_) 
 : GameObject(kName), durability_(durability_)
 {
-    //cout << "Item " << kName << " is created" << endl;
+    cout << "Item " << kName << " is created" << endl;
 }
 
 Item::~Item()

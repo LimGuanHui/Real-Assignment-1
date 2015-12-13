@@ -19,10 +19,12 @@ const int Weapon::getAttackDmg()
     {
         const int kAttackDmg = 0;
     }
+    cout << "kAttackDmg is successs ->" << kAttackDmg << endl;
     return kAttackDmg;
 }
 
 void Weapon::receiveDamage(const int& durability_)
 {
     this->durability_ = durability_;
+    cout << "Weapon receive damage success  Durability_ -> " << durability_ << endl;
 }

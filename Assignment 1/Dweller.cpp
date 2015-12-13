@@ -89,7 +89,6 @@ const int Dweller::getSPECIAL()
     if (outfit_ == 0) // in case there is no outfit
     {
         return SPECIAL_;
-
     }
 }
 
@@ -179,16 +178,19 @@ void Dweller::useRadAway()
 {
     this->radaway_ -= 1;
     this->radiation_ -= 10;
+    cout << "use radaway success ->" << radaway_ << " health is " << radiation_ << endl;
 }
 
 Outfit* Dweller::assignOutfit(Outfit*outfit_)
 {
-    return 0;
+    cout << "Outfit success ->" << outfit_ << endl;
+    return outfit_;
 }
 
 Weapon* Dweller:: assignWeapon(Weapon*weapon_)
 {
-    return 0;
+    cout << "weapon success ->" << outfit_ << endl;
+    return weapon_;
 }
 
 bool Dweller::isDead()
