@@ -5,7 +5,7 @@ Dweller::Dweller()
 
 }
 
-Dweller::Dweller(const string& kName, const int& kSPECIAL)
+Dweller::Dweller(const string& kName, const int& kSPECIAL) : health_(100), stimpak_(0), radaway_(0)
 {
 
 }
