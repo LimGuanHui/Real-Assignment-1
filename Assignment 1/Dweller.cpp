@@ -5,7 +5,7 @@ Dweller::Dweller(const string& kName, const int& SPECIAL_ )
 : position_(0,0), SPECIAL_(SPECIAL_), health_(100), radiation_(0), 
 stimpak_(0), radaway_(0), outfit_(NULL), weapon_(NULL), GameObject(kName)
 {
-    cout << "Dweller " << kName << " is created " << "SPECIAL_ = " << SPECIAL_ << endl;
+    //cout << "Dweller " << kName << " is created " << "SPECIAL_ = " << SPECIAL_ << endl;
 }
 
 Dweller::~Dweller()
@@ -94,14 +94,14 @@ const int Dweller::getSPECIAL()
 
 const int Dweller::getCurrentHealth()
 {
-    cout << "health_ get success -> " << health_ << endl;
+    //cout << "health_ get success -> " << health_ << endl;
     return health_;
     
 }
 
 const int Dweller::getCurrentRadDamage()
 {
-    cout << "radiation_ get success -> " << radiation_ << endl;
+    //cout << "radiation_ get success -> " << radiation_ << endl;
     return radiation_;
 
 }
@@ -115,12 +115,12 @@ const int Dweller::getAttackDmg()
 void Dweller::setPosition(const Vec2D& position_)
 {
     this->position_ = position_;
-    cout << "position_ set success "  << endl;
+    //cout << "position_ set success "  << endl;
 }
 
 const Vec2D Dweller::getPosition() 
 {
-    cout << "position_ get success " << endl;
+    //cout << "position_ get success " << endl;
     return position_;
 }
 
@@ -131,7 +131,7 @@ void Dweller::receiveHealthDamage(const int& health_)
         this->health_ = (100 - radiation_);
     }
     this->health_ = health_;
-    cout << "health damage receive success ->" << health_ << endl;
+    //cout << "health damage receive success ->" << health_ << endl;
 }
 
 void Dweller::receiveRadDamage(const int& radiation_)
@@ -145,51 +145,49 @@ void Dweller::receiveRadDamage(const int& radiation_)
         this->radiation_ = 0;
     }
     this->radiation_ = radiation_;
-    cout << "radiation damage receive success ->" << radiation_ << endl;
+    //cout << "radiation damage receive success ->" << radiation_ << endl;
 }
 
 void Dweller::receiveEquipmentDamage(const int& durability_)
 {
-    cout << "equipment damage receive success ->" << durability_ << endl;
+    //cout << "equipment damage receive success ->" << durability_ << endl;
 }
 
 void Dweller::addStimpak(const int& stimpak_)
 {
-    this->stimpak_ = 0;
     this->stimpak_ = stimpak_;
-    cout << "add stimpak success ->" << stimpak_ << endl;
+    // << "add stimpak success ->" << stimpak_ << endl;
 }
 
 void Dweller::addRadAway(const int& radaway_)
 {
-    this->radaway_ = 0;
     this->radaway_ = radaway_;
-    cout << "add radaway success ->" << radaway_ << endl;
+    //cout << "add radaway success ->" << radaway_ << endl;
 }
 
 void Dweller::useStimpak()
 {
     this->stimpak_ -= 1;
     this->health_ += 20;
-    cout << "use stimpak success ->" << stimpak_ << " health is " << health_ << endl;
+    //cout << "use stimpak success ->" << stimpak_ << " health is " << health_ << endl;
 }
 
 void Dweller::useRadAway()
 {
     this->radaway_ -= 1;
     this->radiation_ -= 10;
-    cout << "use radaway success ->" << radaway_ << " health is " << radiation_ << endl;
+    //cout << "use radaway success ->" << radaway_ << " health is " << radiation_ << endl;
 }
 
 Outfit* Dweller::assignOutfit(Outfit*outfit_)
 {
-    cout << "Outfit success ->" << outfit_ << endl;
+    //cout << "Outfit success ->" << outfit_ << endl;
     return outfit_;
 }
 
 Weapon* Dweller:: assignWeapon(Weapon*weapon_)
 {
-    cout << "weapon success ->" << outfit_ << endl;
+    //cout << "weapon success ->" << outfit_ << endl;
     return weapon_;
 }
 

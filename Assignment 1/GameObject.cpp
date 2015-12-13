@@ -14,7 +14,7 @@ GameObject::~GameObject()
 
 int GameObject::getCount()
 {
-    cout << "number of objects created is " << count_ << endl;
+    // << "number of objects created is " << count_ << endl;
     return count_;
     
 }

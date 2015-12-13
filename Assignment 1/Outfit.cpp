@@ -4,8 +4,8 @@
 Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL) 
 : kSPECIAL(kSPECIAL), Item(kName, durability_)
 {
-    cout << "outfit " << kName << " is created " << "kSPECIAL = " << kSPECIAL
-        << " durability_ = " << durability_ << endl;
+    //cout << "outfit " << kName << " is created " << "kSPECIAL = " << kSPECIAL
+    //    << " durability_ = " << durability_ << endl;
 }
 
 Outfit::~Outfit()

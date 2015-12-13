@@ -4,13 +4,13 @@
 Weapon::Weapon(const string& kName, const int& durability_, const int& kAttackDmg) 
 : kAttackDmg(kAttackDmg), Item(kName, durability_)
 {
-    cout << "weapon " << kName << " is created " << "kAttackdmg = " << kAttackDmg 
-        << " durability_ = " << durability_ << endl;
+    //cout << "weapon " << kName << " is created " << "kAttackdmg = " << kAttackDmg 
+    //    << " durability_ = " << durability_ << endl;
 }
 
 Weapon::~Weapon()
 {
-    cout << "weapon is destroyed" << endl;
+    //cout << "weapon is destroyed" << endl;
 }
 
 const int Weapon::getAttackDmg()
@@ -19,12 +19,12 @@ const int Weapon::getAttackDmg()
     {
         const int kAttackDmg = 0;
     }
-    cout << "kAttackDmg is successs ->" << kAttackDmg << endl;
+    //cout << "kAttackDmg is successs ->" << kAttackDmg << endl;
     return kAttackDmg;
 }
 
 void Weapon::receiveDamage(const int& durability_)
 {
     this->durability_ = durability_;
-    cout << "Weapon receive damage success  Durability_ -> " << durability_ << endl;
+    //cout << "Weapon receive damage success  Durability_ -> " << durability_ << endl;
 }
