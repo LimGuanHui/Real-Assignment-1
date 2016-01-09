@@ -26,8 +26,15 @@ int main()
     d.assignOutfit(&o);
     d.assignWeapon(&w);
     d.setPosition(Vec2D(2,5));
+    d.addRadAway(10);
+    d.addStimpak(5);
+    
     d.receiveRadDamage(20);
     d.receiveHealthDamage(30);
+
+    d.useRadAway();
+    d.useStimpak();
+
     cout << d.getSPECIAL() << endl;
     cout << d.getPosition().x << endl;
     cout << d.getPosition().y << endl;
@@ -35,6 +42,7 @@ int main()
     cout << w.getAttackDmg() << endl;
     cout << o.getSPECIAL() << endl;
     cout << d.getCurrentHealth() << endl;
+    
     return 0;
 }
 

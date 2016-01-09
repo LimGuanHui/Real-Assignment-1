@@ -283,18 +283,19 @@ Function to calculate effects of dweller using a stimpak
 /****************************************************************************/
 void Dweller::useStimpak()
 {
-    if (stimpak_ < 1)
+    
+    if ( stimpak_ > 1 )
     {
-        
-    } 
-    else if ( stimpak_ > 1 )
-    {
-        this->stimpak_ -= 1;
-        this->health_ += 20;
+        stimpak_ -= 1;
+        health_ += 20;
+        if (health_ >= 100)
+        {
+            health_ = 100;
+        }
     }
-    if (100 - radiation_ > health_)
+    if (health_ >= 100 - radiation_)
     {
-
+        health_ = 100 - radiation_;
     }
     //cout << "use stimpak success ->" << stimpak_ << " health is " << health_ << endl;
 }
@@ -306,8 +307,17 @@ Function to calculate effects of dweller using a radaway
 /****************************************************************************/
 void Dweller::useRadAway()
 {
-    this->radaway_ -= 1;
-    this->radiation_ -= 10;
+    if (radaway_ > 0)
+    {
+        radaway_ -= 1;
+        radiation_ -= 10;
+        health_ -= 10;
+        if (radiation_ < 0)
+        {
+            radiation_ = 0;
+        }
+        
+    }
     //cout << "use radaway success ->" << radaway_ << " health is " << radiation_ << endl;
 }
 /****************************************************************************/
