@@ -1,5 +1,14 @@
 #include "Outfit.h"
-
+/****************************************************************************/
+/*!
+\brief
+Outfit constructor with member initializer list
+\param kName
+Name of outfit
+\param durability_ 
+durability of outfit
+*/
+/****************************************************************************/
 
 Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL) 
 : kSPECIAL(kSPECIAL), Item(kName, durability_)
@@ -8,11 +17,24 @@ Outfit::Outfit(const string& kName, const int& durability_, const int& kSPECIAL)
     //    << " durability_ = " << durability_ << endl;
 }
 
+/****************************************************************************/
+/*!
+\brief
+Outfit destructor 
+*/
+/****************************************************************************/
 Outfit::~Outfit()
 {
 
 }
-
+/****************************************************************************/
+/*!
+\brief
+get special value for outfit
+\return
+returns special value
+*/
+/****************************************************************************/
 const int Outfit::getSPECIAL()
 {
     int Strength = 0;
@@ -92,7 +114,14 @@ const int Outfit::getSPECIAL()
     }
     return kSPECIAL;
 }
-
+/****************************************************************************/
+/*!
+\brief
+get durability_ for outfit
+\return
+returns durability_
+*/
+/****************************************************************************/
 void Outfit::receiveDamage(const int& durability_)
 {
     this->durability_ = durability_;

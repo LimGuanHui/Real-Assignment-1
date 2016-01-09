@@ -1,8 +1,24 @@
+/****************************************************************************/
+/*!
+\file Outfit.h
+\author Lim Guan Hui
+\par email: lguanhui14@gmail.com
+\brief
+Class to create a Outfit Item object
+*/
+/****************************************************************************/
+
+
 #ifndef OUTFIT_H
 #define OUTFIT_H
 
 #include "Item.h"
-
+/****************************************************************************/
+/*!
+Class Outfit:
+\brief Defines a Outfit Item and its methods
+*/
+/****************************************************************************/
 class Outfit : public Item
 {
 public:
