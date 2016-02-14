@@ -1,5 +1,5 @@
 #include "GameObject.h"
-int GameObject::count_;
+int GameObject::count_ = 0;
 /****************************************************************************/
 /*!
 \brief
@@ -12,7 +12,7 @@ durability of outfit
 /****************************************************************************/
 GameObject::GameObject(const string& kName) : kName(kName)
 {
-    ++count_;
+    count_ += 1;
     // cout << "its runningggg" << endl;
 }
 /****************************************************************************/
@@ -24,6 +24,7 @@ GameObject destructor
 GameObject::~GameObject()
 {
     //cout << "its runningggg" << endl;
+    count_--;
 }
 /****************************************************************************/
 /*!

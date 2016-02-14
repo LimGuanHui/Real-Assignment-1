@@ -244,10 +244,17 @@ Calculates for dweller equipment damage
 Defines dweller's equipment durability
 */
 /****************************************************************************/
-void Dweller::receiveEquipmentDamage(const int& durability_)
+void Dweller::receiveEquipmentDamage(const int& equipdmg)
 {
     //cout << "equipment damage receive success ->" << durability_ << endl;
-
+    if (weapon_ != 0)
+    {
+        weapon_->receiveDamage(equipdmg);
+    }
+    if (outfit_ != 0)
+    {
+        outfit_->receiveDamage(equipdmg);
+    }
 }
 /****************************************************************************/
 /*!

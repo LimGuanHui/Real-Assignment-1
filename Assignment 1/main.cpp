@@ -30,10 +30,10 @@ int main()
     d.addStimpak(5);
     
     d.receiveRadDamage(20);
-    d.receiveHealthDamage(30);
+    d.receiveHealthDamage(80);
 
-    d.useRadAway();
-    d.useStimpak();
+    //d.useRadAway();
+    //d.useStimpak();
 
     cout << d.getSPECIAL() << endl;
     cout << d.getPosition().x << endl;
@@ -42,7 +42,8 @@ int main()
     cout << w.getAttackDmg() << endl;
     cout << o.getSPECIAL() << endl;
     cout << d.getCurrentHealth() << endl;
-    
+    cout << GameObject::getCount() << endl;
+    cout << d.isDead() << endl;
     return 0;
 }
 

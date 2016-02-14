@@ -53,8 +53,9 @@ Getter for weapon attack damage
 Resulting weapon attack damage
 */
 /****************************************************************************/
-void Weapon::receiveDamage(const int& durability_)
+void Weapon::receiveDamage(const int& equipdmg)
 {
-    this->durability_ = durability_;
+    durability_ -= equipdmg / 2;
+
     //cout << "Weapon receive damage success  Durability_ -> " << durability_ << endl;
 }
